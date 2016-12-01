@@ -1,2 +1,6 @@
-# ofs-formula
-Saltstack formula for ObjectiveFS
+**ofs.mount**
+====
+*Set up ObjectiveFS mounts*
+
+
+
