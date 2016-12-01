@@ -12,3 +12,4 @@ ofs-package:
   pkg.installed:
     - sources:
       - objectivefs: {{ ofs_package }}
+
