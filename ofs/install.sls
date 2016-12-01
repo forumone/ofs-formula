@@ -4,8 +4,6 @@
 
 ofs-pkgs:
   pkg.installed:
-    - pkgs:
-      - fuse
-      - objectivefs
     - sources:
       - objectivefs: {{ ofs_package }}
+      - fuse: {}
