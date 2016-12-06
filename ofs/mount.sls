@@ -19,7 +19,7 @@ ofs-mount-fs:
 ofs-bind-fs:
   mount.mounted:
     - name: {{ pillar['ofs']['bind_mount'] }}
-    - device: s3://{{ pillar['ofs']['s3_bucket'] }}
+    - device: /mnt/ofs
     - mkmnt: True
     - fstype: none
     - opts: bind
