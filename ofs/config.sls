@@ -16,3 +16,6 @@
   file.append:
     - text: {{ pillar['ofs']['s3_secret_key'] }}
     
+/etc/objectivefs.env/OBJECTIVEFS_PASSPHRASE:
+  file.append:
+    - text: {{ pillar['ofs']['passphrase'] }}
