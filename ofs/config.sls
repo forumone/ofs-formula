@@ -19,3 +19,7 @@
 /etc/objectivefs.env/OBJECTIVEFS_PASSPHRASE:
   file.append:
     - text: {{ pillar['ofs']['passphrase'] }}
+
+/etc/objectivefs.env/DISKCACHE_SIZE:
+  file.append:
+    - text: {{ salt['pillar.get']('ofs:diskcache_size', '4G') }}
