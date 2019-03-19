@@ -1,16 +1,21 @@
-# Mount existing OFS volume at /mnt/ofs
+# Check if mount point is defined in pillar
+{% if pillar['ofs']['mount_point'] is defined %}
+{% set mp = pillar['ofs']['mount_point'] %}
+{% else %}
+{% set mp = '/var/www' %}
+{% endif %}
 
 # Create mount points
 ofs-mount-point-mnt-ofs:
   file.directory:
-    - name: /var/www
+    - name: {{ mp }}
     - user: root
     - group: root
 
 # Mount fs and add to fstab
 ofs-mount-fs:
   mount.mounted:
-    - name: /var/www
+    - name: {{ mp }}
     - device: s3://{{ pillar['ofs']['s3_bucket'] }}
     - fstype: objectivefs
 
