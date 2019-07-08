@@ -22,5 +22,5 @@ ofs-bind-fs:
     - device: /mnt/ofs
     - mkmnt: True
     - fstype: none
-    - opts: bind
+    - opts: bind,_netdev,auto
 {% endif %}
