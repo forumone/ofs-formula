@@ -13,6 +13,7 @@ ofs-mount-fs:
     - name: /mnt/ofs
     - device: s3://{{ pillar['ofs']['s3_bucket'] }}
     - fstype: objectivefs
+    - opts: _netdev,auto
 
 # Bind to defined path
 {% if pillar['ofs']['bind_mount'] is defined %}
@@ -22,5 +23,5 @@ ofs-bind-fs:
     - device: /mnt/ofs
     - mkmnt: True
     - fstype: none
-    - opts: bind,_netdev,auto
+    - opts: bind
 {% endif %}
