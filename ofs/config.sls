@@ -23,6 +23,7 @@
 /etc/objectivefs.env/DISKCACHE_SIZE:
   file.managed:
     - text: {{ salt['pillar.get']('ofs:diskcache_size', '4G') }}
+    - replace: True
 
 /etc/objectivefs.env/DISKCACHE_PATH:
   file.append:
