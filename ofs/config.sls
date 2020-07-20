@@ -22,7 +22,7 @@
 
 /etc/objectivefs.env/DISKCACHE_SIZE:
   file.append:
-    - text: {{ salt['pillar.get']('ofs:diskcache_size', '4G') }}
+    - text: {{ salt['pillar.get']('ofs:diskcache_size', '8G') }}
 
 /etc/objectivefs.env/DISKCACHE_PATH:
   file.append:
