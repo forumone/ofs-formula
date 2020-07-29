@@ -18,10 +18,9 @@ ofs-mount-fs:
     - opts: 
       - bind
       - auto
+      - mt
       - _netdev
     - dump: 0
     - pass_num: 0
     - persist: True
     - mount: True
-    - 
-    
