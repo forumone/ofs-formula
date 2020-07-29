@@ -23,5 +23,3 @@ ofs-mount-fs:
     - pass_num: 0
     - persist: True
     - mount: True
-    - 
-    
