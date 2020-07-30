@@ -8,25 +8,20 @@ ofs-mount-point-mnt-ofs:
     - user: root
     - group: root
 
-mount-ofs:
+# Mount fs and add to fstab
+ofs-mount-fs:
   mount.mounted:
-    - name: /mnt/ofs
+    - name: {{ pget('ofs:mount_point', '/var/www') }}
     - device: s3://{{ pillar['ofs']['s3_bucket'] }}
     - fstype: objectivefs
     - mkmnt: True
-    - opts: auto,mt,_netdev
-    - dump: 0
-    - pass_num: 0
-    - persist: True
-    - mount: True
-
-# Mount fs and add to fstab
-ofs-mount-www:
-  mount.mounted:
-    - name: {{ pget('ofs:mount_point', '/var/www') }}
-    - device: /mnt/ofs
-    - fstype: none
-    - opts: bind,auto,mt,_netdev
+    - opts:
+      - nonempty
+      - auto
+      - mt
+      - _netdev
+      - acl
+      - mboost
     - dump: 0
     - pass_num: 0
     - persist: True
