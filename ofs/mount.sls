@@ -15,10 +15,20 @@ ofs-mount-fs:
     - device: s3://{{ pillar['ofs']['s3_bucket'] }}
     - fstype: objectivefs
     - mkmnt: True
-    - opts: auto,nonempty,_netdev,mt,mboost,acl
+    - opts: 
+      - auto
+      - nonempty
+      - _netdev 
+      - mt
+      - mboost
+      - acl
     - dump: 0
     - pass_num: 0
     - persist: True
     - mount: True
-    - extra_mount_invisible_options: _netdev,mt,mboost,acl
+    - extra_mount_invisible_options:
+      - nonempty
+      - mt
+      - mboost
+      - acl
 
