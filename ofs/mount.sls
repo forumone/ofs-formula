@@ -27,7 +27,6 @@ ofs-mount-fs:
     - persist: True
     - mount: True
     - extra_mount_invisible_options:
-      - nonempty
       - mt
       - mboost
       - acl
