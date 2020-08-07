@@ -18,7 +18,6 @@ ofs-mount-fs:
     - opts:
       - nonempty
       - auto
-      - mt
       - _netdev
       - acl
       - mboost
