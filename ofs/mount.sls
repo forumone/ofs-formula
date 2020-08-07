@@ -20,7 +20,6 @@ ofs-mount-fs:
       - auto
       - _netdev
       - acl
-      - mboost
     - dump: 0
     - pass_num: 0
     - persist: True
