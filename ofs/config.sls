@@ -5,20 +5,20 @@
     - mode: 750
 
 /etc/objectivefs.env/OBJECTIVEFS_LICENSE:
-  file.managed:
-    - contents: {{ pillar['ofs']['license'] }}
+  file.append:
+    - text: {{ pillar['ofs']['license'] }}
 
 /etc/objectivefs.env/AWS_ACCESS_KEY_ID:
-  file.managed:
-    - contents: {{ pillar['ofs']['s3_access_key'] }}
+  file.append:
+    - text: {{ pillar['ofs']['s3_access_key'] }}
 
 /etc/objectivefs.env/AWS_SECRET_ACCESS_KEY:
-  file.managed:
-    - contents: {{ pillar['ofs']['s3_secret_key'] }}
+  file.append:
+    - text: {{ pillar['ofs']['s3_secret_key'] }}
 
 /etc/objectivefs.env/OBJECTIVEFS_PASSPHRASE:
-  file.managed:
-    - contents: {{ pillar['ofs']['passphrase'] }}
+  file.append:
+    - text: {{ pillar['ofs']['passphrase'] }}
 
 /etc/objectivefs.env/DISKCACHE_SIZE:
   file.managed:
