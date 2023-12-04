@@ -1,7 +1,7 @@
 # Install OFS rpm and its dependencies
 
-{% set ofs_package = salt['pillar.get']('ofs:package', 'salt://ofs/packages/objectivefs-7.0-1.x86_64.rpm') %}
-{% set ofs_version = salt['pillar.get']('ofs:version', '7.0-1') %}
+{% set ofs_package = salt['pillar.get']('ofs:package', 'salt://ofs/packages/objectivefs-7.1-1.x86_64.rpm') %}
+{% set ofs_version = salt['pillar.get']('ofs:version', '7.1-1') %}
 
 ofs-dependencies:
   pkg.installed:
